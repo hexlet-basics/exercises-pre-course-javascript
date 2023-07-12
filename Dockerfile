@@ -1,12 +1,11 @@
-FROM hexletbasics/base-image:latest
+FROM hexletbasics/base-image
 
-# TODO: replace exercises-template with "exercises-<language>"
-WORKDIR /exercises-template
-
-# https://github.com/pgrange/bash_unit
-RUN cd /usr/local/bin && curl -s https://raw.githubusercontent.com/pgrange/bash_unit/master/install.sh | bash
+WORKDIR /exercises-pre-course-javascript
 
 COPY . .
 
-# TODO: replace
-ENV PATH=/exercises-template/bin:$PATH
+ENV NODE_PATH /exercises-pre-course-javascript/src
+
+RUN npm ci
+
+ENV PATH=/exercises-pre-course-javascript/bin:$PATH
