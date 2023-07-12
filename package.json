@@ -1,0 +1,32 @@
+{
+  "name": "hexlet-basics",
+  "type": "module",
+  "devDependencies": {
+    "eslint": "^8.9.0",
+    "eslint-config-airbnb-base": "^15.0.0",
+    "eslint-plugin-import": "^2.25.4",
+    "npm-check-updates": "^16.6.2"
+  },
+  "scripts": {
+    "test": "jest --colors"
+  },
+  "jest": {
+    "testEnvironment": "node",
+    "transform": {}
+  },
+  "exports": {
+    "./tests": "./src/tests.js",
+    "./got": "./src/hexlet/got.js",
+    "./math": "./src/hexlet/math.js",
+    "./string": "./src/hexlet/string.js"
+  },
+  "dependencies": {
+    "@jest/globals": "^27.5.1",
+    "chai": "^4.3.6",
+    "chalk": "^5.0.0",
+    "expect": "^27.5.1",
+    "jest": "^27.5.1",
+    "lodash": "^4.17.21",
+    "stacktracey": "^2.1.8"
+  }
+}

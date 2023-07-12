@@ -1,28 +1,24 @@
 -include /opt/basics/common/common.mk
 
-compose-setup: compose-build
+compose-setup: compose-build compose-install
 
 compose:
 	docker-compose up
 
-# compose-install:
-# 	docker-compose run exercises bundle install
+compose-build:
+	docker-compose build
+
+compose-install:
+	docker-compose run exercises npm ci
+
+code-lint:
+	npx eslint modules
 
 compose-bash:
 	docker-compose run exercises bash
 
-compose-build:
-	docker-compose build
-
 compose-test:
 	docker-compose run exercises make test
-
-compose-code-lint:
-	docker-compose run exercises make code-lint
-
-code-lint:
-	# TODO: add linter
-	echo "code-lint"
 
 compose-description-lint:
 	docker-compose run exercises make description-lint
@@ -33,6 +29,3 @@ compose-schema-validate:
 ci-check:
 	docker-compose --file docker-compose.yml build
 	docker-compose --file docker-compose.yml up --abort-on-container-exit
-
-find-todo:
-	git grep TODO
