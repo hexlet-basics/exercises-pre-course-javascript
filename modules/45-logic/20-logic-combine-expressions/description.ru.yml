@@ -79,7 +79,7 @@ instructions: |
   isInternationalPhone('+79602223423'); // true
   ```
 
-tips: 
+tips:
   - |
     [Выражение](https://ru.wikipedia.org/wiki/Выражение_(информатика))
 
