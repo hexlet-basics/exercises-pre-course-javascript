@@ -13,7 +13,7 @@ console.log(firstName); // => Alexander
 ```javascript
 let firstName = 'Alexander';
 // Код выполнится без ошибок
-firstName = 'Blexander'
+firstName = 'Blexander';
 console.log(firstName); // => Blexander
 ```
 

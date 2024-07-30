@@ -5,7 +5,7 @@
 
 <pre class='hexlet-basics-output'>
 125
-7500
+863.75
 </pre>
 
 Считаем, что:
