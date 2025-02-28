@@ -1,6 +1,6 @@
 // @ts-check
 
-import { test, expect } from '@jest/globals';
+import { test, expect } from 'vitest';
 import f from './index.js';
 
 test('test', () => {
