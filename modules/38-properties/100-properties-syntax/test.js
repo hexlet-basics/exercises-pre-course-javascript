@@ -1,4 +1,12 @@
-import { expectOutput } from 'hexlet-basics/tests';
+import { expect, test, vi } from 'vitest'
 
 const expected = 75;
-expectOutput(expected);
+
+test('hello world', async () => {
+  const consoleLogSpy = vi.spyOn(console, 'log').mockImplementation(() => { });
+  await import('./index.js')
+
+  const firstArg = consoleLogSpy.mock.calls[0]?.[0];;
+
+  expect(firstArg).toBe(expected)
+})
