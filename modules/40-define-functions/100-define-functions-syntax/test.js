@@ -1,13 +1,13 @@
+// @ts-check
+
 import { expect, test, vi } from 'vitest'
 import f from './index.js';
 
-const expected = 'Winter is coming';
-
 test('hello world', async () => {
   const consoleLogSpy = vi.spyOn(console, 'log').mockImplementation(() => { });
-  f();
+  f()
 
-  const firstArg = consoleLogSpy.mock.calls[0]?.[0];
+  const firstArg = consoleLogSpy.mock.calls.join('\n');
 
-  expect(firstArg).toBe(expected)
+  expect(firstArg).toBe('Winter is coming')
 })

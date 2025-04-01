@@ -2,7 +2,7 @@
 
 import { expect, test, vi } from 'vitest'
 
-test('rand test', async () => {
+test('hello world', async () => {
   const consoleLogSpy = vi.spyOn(console, 'log').mockImplementation(() => { });
   await import('./index.js')
 

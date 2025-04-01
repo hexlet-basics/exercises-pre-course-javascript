@@ -1,6 +1,6 @@
-import { expect, test, vi } from 'vitest'
+// @ts-check
 
-const expected = 'a mind needs books as a sword needs a whetstone, if it is to keep its edge.';
+import { expect, test, vi } from 'vitest'
 
 test('hello world', async () => {
   const consoleLogSpy = vi.spyOn(console, 'log').mockImplementation(() => { });
@@ -8,5 +8,5 @@ test('hello world', async () => {
 
   const firstArg = consoleLogSpy.mock.calls.join('\n');
 
-  expect(firstArg).toBe(expected)
+  expect(firstArg).toBe('a mind needs books as a sword needs a whetstone, if it is to keep its edge.')
 })

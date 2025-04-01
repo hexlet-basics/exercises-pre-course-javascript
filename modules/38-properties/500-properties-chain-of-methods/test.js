@@ -1,12 +1,12 @@
-import { expect, test, vi } from 'vitest'
+// @ts-check
 
-const expected = 7;
+import { expect, test, vi } from 'vitest'
 
 test('hello world', async () => {
   const consoleLogSpy = vi.spyOn(console, 'log').mockImplementation(() => { });
   await import('./index.js')
 
-  const firstArg = consoleLogSpy.mock.calls[0]?.[0];
+  const firstArg = consoleLogSpy.mock.calls.join('\n');
 
-  expect(firstArg).toBe(expected)
+  expect(firstArg).toBe('7')
 })

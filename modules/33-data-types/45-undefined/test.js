@@ -1,6 +1,6 @@
-import { expect, test, vi } from 'vitest'
+// @ts-check
 
-const expected = undefined;
+import { expect, test, vi } from 'vitest'
 
 test('hello world', async () => {
   const consoleLogSpy = vi.spyOn(console, 'log').mockImplementation(() => { });
@@ -8,5 +8,5 @@ test('hello world', async () => {
 
   const firstArg = consoleLogSpy.mock.calls[0]?.[0];
 
-  expect(firstArg).toBe(expected)
+  expect(firstArg).toBe(undefined)
 })
