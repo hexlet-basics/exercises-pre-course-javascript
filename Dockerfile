@@ -1,9 +1,11 @@
 FROM hexletbasics/base-image
 
-ENV NODE_PATH=/exercises-pre-course-javascript/src
-ENV PATH=/exercises-pre-course-javascript/bin:/exercises-pre-course-javascript/node_modules/.bin:$PATH
+ENV COURSE_DIR=/exercises-pre-course-javascript
 
-WORKDIR /exercises-pre-course-javascript
+ENV NODE_PATH=${COURSE_DIR}/src
+ENV PATH=${COURSE_DIR}/bin:${COURSE_DIR}/node_modules/.bin:$PATH
+
+WORKDIR ${COURSE_DIR}
 
 COPY package.json package-lock.json ./
 RUN npm ci
